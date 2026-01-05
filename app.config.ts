@@ -63,6 +63,6 @@ function getAppIcon() {
   if (appVariant === "production") return "./assets/icon.png";
   if (appVariant === "pre-production")
     return "./assets/icon.png";
-  if (appVariant === "staging") return "./src/assets/icon.png";
+  if (appVariant === "staging") return "./assets/icon.png";
   return "./assets/icon.png";
 }
