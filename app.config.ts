@@ -34,6 +34,11 @@ export default {
   android: {
     package: getBundleIdentifier(),
     edgeToEdgeEnabled: true,
+    icon: getAppIcon(),
+    adaptiveIcon: {
+      foregroundImage: getAppIcon(),
+      backgroundColor: "#ffffff",
+    },
   },
 
   plugins: [
