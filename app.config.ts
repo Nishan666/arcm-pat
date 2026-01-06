@@ -72,7 +72,7 @@ function getAssetPath(prefix: string) {
 }
 
 function getAppIcon() {
-  return getAssetPath("logo");
+  return getAssetPath("icon");
 }
 
 function getAdaptiveIcon() {
