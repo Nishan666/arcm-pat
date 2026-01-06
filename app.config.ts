@@ -53,7 +53,7 @@ export default {
 function getBundleIdentifier() {
   const appVariant = process.env.APP_VARIANT;
   if (appVariant === "prod") return "com.arcm.patient";
-  if (appVariant === "pre-prod") return "com.arcm.patient.preprod";
+  if (appVariant === "preprod") return "com.arcm.patient.preprod";
   if (appVariant === "qa") return "com.arcm.patient.qa";
   return "com.arcm.patient.develop";
 }
@@ -61,8 +61,8 @@ function getBundleIdentifier() {
 function getAppIcon() {
   const appVariant = process.env.APP_VARIANT;
   if (appVariant === "prod") return "./assets/images/logo-prod.png";
-  if (appVariant === "pre-prod")
-    return "./assets/images/logo-pre-prod.png";
+  if (appVariant === "preprod")
+    return "./assets/images/logo-preprod.png";
   if (appVariant === "qa") return "./assets/images/logo-qa.png";
   return "./assets/images/logo-develop.png";
 }
