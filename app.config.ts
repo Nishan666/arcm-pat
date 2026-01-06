@@ -9,8 +9,8 @@ const PERMISSIONS = {
 };
 
 export default {
-  name: "arcm-pat",
-  slug: "arcm-pat",
+  name: "ARCM Patient",
+  slug: "arcm-patient",
   version: "1.0.0",
   orientation: "portrait",
   icon: getAppIcon(),
