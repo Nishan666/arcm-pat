@@ -36,7 +36,7 @@ export default {
     edgeToEdgeEnabled: true,
     icon: getAppIcon(),
     adaptiveIcon: {
-      foregroundImage: getAppIcon(),
+      foregroundImage: getAdaptiveIcon(),
       backgroundColor: "#ffffff",
     },
   },
@@ -63,11 +63,18 @@ function getBundleIdentifier() {
   return "com.arcm.patient.develop";
 }
 
-function getAppIcon() {
+function getAssetPath(prefix: string) {
   const appVariant = process.env.APP_VARIANT;
-  if (appVariant === "prod") return "./assets/images/logo-prod.png";
-  if (appVariant === "preprod")
-    return "./assets/images/logo-preprod.png";
-  if (appVariant === "qa") return "./assets/images/logo-qa.png";
-  return "./assets/images/logo-develop.png";
+  if (appVariant === "prod") return `./assets/images/${prefix}-prod.png`;
+  if (appVariant === "preprod") return `./assets/images/${prefix}-preprod.png`;
+  if (appVariant === "qa") return `./assets/images/${prefix}-qa.png`;
+  return `./assets/images/${prefix}-develop.png`;
+}
+
+function getAppIcon() {
+  return getAssetPath("logo");
+}
+
+function getAdaptiveIcon() {
+  return getAssetPath("adaptive-icon");
 }
