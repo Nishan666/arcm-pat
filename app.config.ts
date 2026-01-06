@@ -15,7 +15,7 @@ export default {
   orientation: "portrait",
   icon: getAppIcon(),
   splash: {
-    image: "./assets/splash-icon.png",
+    image: getAppIcon(),
     resizeMode: "cover",
     backgroundColor: "#000000",
   },
@@ -41,7 +41,7 @@ export default {
     [
       "expo-notifications",
       {
-        icon: "./assets/icon.png",
+        icon: getAppIcon(),
         color: "#ffffff",
         defaultChannel: "default",
         enableBackgroundRemoteNotifications: false,
@@ -52,17 +52,17 @@ export default {
 
 function getBundleIdentifier() {
   const appVariant = process.env.APP_VARIANT;
-  if (appVariant === "production") return "com.arcm.patient";
-  if (appVariant === "pre-production") return "com.arcm.patient.beta";
-  if (appVariant === "staging") return "com.arcm.patient.staging";
+  if (appVariant === "prod") return "com.arcm.patient";
+  if (appVariant === "pre-prod") return "com.arcm.patient.preprod";
+  if (appVariant === "qa") return "com.arcm.patient.qa";
   return "com.arcm.patient.develop";
 }
 
 function getAppIcon() {
   const appVariant = process.env.APP_VARIANT;
-  if (appVariant === "production") return "./assets/icon.png";
-  if (appVariant === "pre-production")
-    return "./assets/icon.png";
-  if (appVariant === "staging") return "./assets/icon.png";
-  return "./assets/icon.png";
+  if (appVariant === "prod") return "./assets/images/logo-prod.png";
+  if (appVariant === "pre-prod")
+    return "./assets/images/logo-pre-prod.png";
+  if (appVariant === "qa") return "./assets/images/logo-qa.png";
+  return "./assets/images/logo-develop.png";
 }
